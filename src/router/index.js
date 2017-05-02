@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import SignIn from '@/modules/sign/in'
 import SignUp from '@/modules/sign/up'
 import Menu from '@/modules/menu/menu'

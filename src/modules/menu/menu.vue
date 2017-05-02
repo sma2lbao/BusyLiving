@@ -1,12 +1,11 @@
 <template lang="html">
     <article class="">
-
         <mt-header :title="selected">
           <i class="fa fa-user-circle-o fa-lg" slot="left" @click="popupVisible = true;"></i>
           <i class="fa fa-plus fa-lg" slot="right"></i>
         </mt-header>
 
-        <mt-search v-model="value" :show="isSearch" :class="{ 'search-def': !isSearch}">
+        <mt-search v-model="value" :show="isSearch" :class="{ 'search-def': !isSearch, 'search-focus': isSearch}">
           <mt-cell
             title="item.title"
             value="item.value">
@@ -129,13 +128,14 @@ export default {
             else {
                 this.$data.isSearch = false;
             }
-        }
+        },
     }
 }
 </script>
 
 <style lang="css" scoped>
     .search-def{height: 100%;}
+    .search-focus{height: calc(100vh - 40px);}
     .mint-search{position: relative;}
     .user-menu{width: 70%;height: 100%;}
     .fade-test{position: fixed;top: 0;bottom: 0;left: 0;width: 70%;background-color: #fff;z-index: 9999;}
